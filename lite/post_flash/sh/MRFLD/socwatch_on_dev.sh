@@ -14,7 +14,7 @@ if [ "$bw" == "NONE" ]; then
      echo "********Collect Sofia Socwatch-Data*************"
      ./socwatch -f vm-switch -f wakeup -t $case_time -o ./results/$case_name &
      echo "*****START RUN POWERTOP IN THE BACKGROUND*****"
-     ./powertop -d -t $case_time  > $case_name  &
+     ./powertop -d -t $case_time  > ./ptop_results/$case_name  &
 else
 
     ./socwatch --max-detail -f cstate -f pstate -f wakelock -f ncstates -f scres -f $bw -t $case_time -o ./results/${case_name}_$bw &
