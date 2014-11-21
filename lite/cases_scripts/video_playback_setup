@@ -1,0 +1,13 @@
+#!/bin/bash
+case_name=$1
+case_kpi=$2
+sd1=$3
+sd2=$4
+
+echo "[ CASE NAME : $case_name KPI: $case_kpi SETUP Self-define 1: $sd1  Self-define 2: $sd2 ]"
+adb root
+
+echo "VIDEO PLAYBACK COMMON SETUP"
+cd cases_scripts
+./video_playback_common_setup
+cd -

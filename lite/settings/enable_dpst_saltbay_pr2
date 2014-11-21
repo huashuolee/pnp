@@ -1,0 +1,19 @@
+#!/bin/bash
+adb root
+sleep 3
+adb remount
+sleep 2
+
+echo "[ >>> DISPMGR <<< ]"
+adb shell mkdir /data/data/com.dispmgr/shared_prefs
+sleep 2
+adb push dispmgr/com.dispmgr_preferences.xml /data/data/com.dispmgr/shared_prefs/com.dispmgr_preferences.xml
+sleep 2
+
+adb shell am start -a android.intent.action.VIEW -n com.dispmgr/.dispmgr
+sleep 5
+
+adb shell input tap 350 350
+sleep 2
+echo "[ DISPMGR START ]"
+adb shell input keyevent 4   #send keyevent "KEYCODE_BACK"

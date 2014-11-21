@@ -1,0 +1,55 @@
+#!/bin/bash
+
+function isValueInArr(){
+    params=(DPST dpst VPP vpp WIFI wifi)
+    value=$1
+    array=${params[@]}
+    for i in ${array[@]}
+    do
+        if [ $i == $value ]; then
+            echo $i
+            return
+        fi
+    done
+    echo "False"
+}
+
+logname=$1 #the first parameter
+echo ">>>> VIDEO PLAYBACK COMMON STOP $logname"
+
+# remove the first parameter
+arr=($@)
+#echo ${arr[@]}
+unset arr[0]
+#echo ${arr[@]}
+
+for i in ${arr[@]}
+do
+    if [ $(isValueInArr $i) == 'False' ]; then
+        echo "$i IS NOT SUPPORTED."
+    else
+        if [ $i == 'DPST' ] || [ $i == 'dpst' ];
+        then
+            echo  "DPST DISABLE"
+            cd ../settings/
+            #./disable_dpst_saltbay_pr2
+            cd -
+        elif [ $i == 'VPP' ] || [ $i == 'vpp' ];
+        then
+            echo  "VPP DISABLE"
+            cd ../settings/
+            ./vpp_off
+            cd -
+        elif [ $i == 'WIFI' ] || [ $i == 'wifi' ];
+        then
+            echo "WIFI DISABLE"
+            cd ../settings/
+            ./wifi_off
+            cd -
+        fi
+    fi
+done
+
+
+adb logcat -v time > $logname &
+sleep 10

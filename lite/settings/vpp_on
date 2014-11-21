@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "[#### ENABLE INTEL SMART VIDEO ####]"
+adb shell mkdir /data/data/com.intel.vpp/shared_prefs/
+adb push vpp/vpp_settings_on.xml /data/data/com.intel.vpp/shared_prefs/vpp_settings.xml
+echo "[#### ENABLE INTEL SMART VIDEO DONE ####]"
+

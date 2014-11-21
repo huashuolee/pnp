@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="pref_camera_picture_size_key">StandardScreen</string>
+    <int name="pref_local_version_key" value="2" />
+    <string name="pref_camera_flashmode_key">off</string>
+</map>

@@ -1,0 +1,8 @@
+ww23 disable SDV by default
+================
+
+camera_profiles.xml = camera_profiles_disable_sdv.xml
+
+camera_profiles_disable_dvs.xml = camera_profiles_disable_dvs_sdv.xml
+
+

@@ -1,0 +1,37 @@
+#! /bin/bash
+
+#echo "[startup] wait for device"
+#adb wait-for-device
+echo "[ RECORD SOCIAL 1080P SETUP ]"
+sleep 2
+adb root
+
+cd settings
+#./set_cpu_freq.sh
+cd -
+
+echo "[ CAMERA PREPARATION ]"
+sleep 2
+#adb shell am start -a android.intent.action.MAIN -n com.android.camera2/com.android.camera.CameraLauncher
+adb shell mkdir /data/data/com.android.camera2/shared_prefs/
+sleep 2
+adb push com.android.camera2_preferences.xml /data/data/com.android.camera2/shared_prefs/
+sleep 2
+adb push com.android.camera2_preferences_0.xml /data/data/com.android.camera2/shared_prefs/
+sleep 2
+
+adb shell am start -a android.intent.action.MAIN -n com.android.camera2/com.android.camera.CameraLauncher
+sleep 5
+./cases_scripts/record_social_start
+
+sleep 5
+#./cases_scripts/record_social_stop
+
+
+echo "[ RECORD SOCIAL 1080P SETUP ]"
+sleep 2
+#adb shell am start -a android.intent.action.MAIN -n com.intel.camera22/.VideoCamera
+
+cd test_case/
+./common_setup $1
+cd -

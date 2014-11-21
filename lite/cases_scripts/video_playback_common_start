@@ -1,0 +1,59 @@
+#!/bin/bash
+echo ">>>> VIDEO PLAY BACK COMMON START"
+
+case_name=$1
+media_file=$2
+
+./dumpsys.sh $case_name &
+date=`date "+%Y%m%d"`
+adb shell date -s $date
+
+echo "DISABLE AUTOROTATION"
+adb shell sqlite3 /data/data/com.android.providers.settings/databases/settings.db "update system set value='0' where name='accelerometer_rotation'";
+sleep 2
+
+adb shell echo "."
+adb shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:1
+sleep 3
+
+echo "media_file = [$media_file] case = [$case_name]"
+if [ "$media_file" == "NONE" ] || [ -z "$media_file" ]; then
+    echo "media_file empty"
+    echo "media_file = ${media_file}"
+else
+    echo "remove /data/data/com.google.android.gallery3d/cache"
+    adb wait-for-device
+    adb shell rm -r /data/data/com.google.android.gallery3d/cache
+    echo "remove /data/data/com.google.android.gallery3d/cache done"
+    echo "START VIDEO FIRST TO AVOID RESUME PLAY DIALOG"
+    adb wait-for-device
+#    adb shell am start -a android.intent.action.VIEW -n com.google.android.gallery3d/com.android.gallery3d.app.MovieActivity -d file:///sdcard/$media_file -t video/*
+  #adb shell am start -a android.intent.action.VIEW -n com.google.android.apps.plus/com.google.android.apps.photos.phone.PhotosHomeActivity
+   sleep 2
+   # adb shell am start -a android.intent.action.VIEW -n com.google.android.apps.plus/.phone.VideoViewActivity -d file:///sdcard/$media_file -t video/*
+     adb root
+   sleep 2
+     adb shell date -s "20150601.065615"
+   sleep 2
+
+    #adb shell am start -a android.intent.action.VIEW -n com.android.gallery3d/.app.MovieActivity -d file:///sdcard/$media_file -t video/*
+    adb shell am start -a android.intent.action.VIEW -n com.google.android.apps.plus/.phone.VideoViewActivity -d file:///sdcard/$media_file  -t video/*
+    adb wait-for-device
+    adb shell input keyevent 4
+    sleep 2
+    #adb shell am start -a android.intent.action.VIEW -n com.google.android.apps.plus/.phone.VideoViewActivity -d file:///sdcard/$media_file -t video/*
+   # adb shell am start -a android.intent.action.VIEW -n com.android.gallery3d/.app.MovieActivity -d file:///sdcard/$media_file -t video/*
+    adb shell am start -a android.intent.action.VIEW -n com.google.android.apps.plus/.phone.VideoViewActivity -d file:///sdcard/$media_file  -t video/*
+#    adb shell am start -a android.intent.action.VIEW -n com.google.android.gallery3d/com.android.gallery3d.app.MovieActivity -d file:///sdcard/$media_file -t video/*
+    echo "START TO PLAY ${media_file}"
+
+    #FOR SALTBAY
+#    adb shell am start -a android.intent.action.VIEW -n com.google.android.gallery3d/com.android.gallery3d.app.MovieActivity -d file:///sdcard/$media_file -t video/*
+
+    #FOR SALTBAY_64 in 2014
+    #adb shell am start -a android.intent.action.VIEW -n com.google.android.gallery3d/com.android.gallery3d.app.MovieActivity -d file:///sdcard/$media_file -t video/*
+    #FOR SALTBAY_64 in 2013
+#    adb shell am start -a android.intent.action.VIEW -n com.android.gallery3d/com.android.gallery3d.app.MovieActivity -d file:///sdcard/$media_file -t video/*
+fi
+
+

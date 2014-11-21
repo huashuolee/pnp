@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "[ >>> DISABLE DISPMGR <<< ]"
+
+adb shell am start -a android.intent.action.VIEW -n com.dispmgr/.dispmgr
+sleep 5
+
+adb shell input tap 500 350
+sleep 2
+echo "[ DISPMGR STOP ]"
+adb shell input keyevent 4   #send keyevent "KEYCODE_BACK"

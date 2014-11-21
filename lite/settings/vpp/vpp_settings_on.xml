@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="frc_status">1frc</string>
+    <string name="vpp_status">1vpp</string>
+</map>

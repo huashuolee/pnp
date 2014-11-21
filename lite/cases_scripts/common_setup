@@ -1,0 +1,10 @@
+#! /bin/bash
+
+echo "[ COMMON SETUP START ]"
+
+if [ "$1" == "DPSTON" ]; then
+    echo "set_dpst_brightness.sh $1"
+    ./set_dpst_brightness.sh
+fi
+
+echo "[ COMMON SETUP DONE ]"

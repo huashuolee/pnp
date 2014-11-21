@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="pref_camera_jpegquality_key">superfine</string>
+    <string name="pref_fdfr_key">off</string>
+    <string name="pref_camera_geo_location_key">off</string>
+    <int name="pref_version_key" value="5" />
+    <int name="pref_camera_use_sdcard_type_key" value="0" />
+    <boolean name="pref_camera_first_use_hint_shown_key" value="false" />
+</map>

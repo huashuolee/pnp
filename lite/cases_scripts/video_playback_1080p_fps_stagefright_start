@@ -1,0 +1,21 @@
+#! /bin/bash
+
+case_name=$1
+media_file=$2
+
+echo "[ VIDEO PLAYBACK 1080P SETUP 30 FPS STAGEFRIGHT START]"
+adb root
+sleep 2
+
+cd cases_scripts
+./get_fps.sh $case_name
+./video_playback_common_start $case_name $media_file
+cd ..
+
+#adb shell am start -a android.intent.action.VIEW -n com.android.gallery3d/.app.MovieActivity -d file:///sdcard/big_buck_bunny_1080p_audio_30fps.mp4 -t video/*
+##adb shell am start -a android.intent.action.VIEW -n com.intel.android.gallery3d/.app.MovieActivity -d file:///sdcard/big_buck_bunny_1080p_audio_30fps.mp4 -t video/* &
+
+#launch systrace
+#cd test_case
+#./takefps.sh $1 fps.html
+

@@ -1,0 +1,16 @@
+#! /bin/bash
+
+#echo "[start] adb wait for device"
+#adb wait-for-device
+#sleep 5
+echo "[ CAMERA USERMODE START ]"
+echo "[ Need to sleep 60 ]"
+sleep 60
+
+#for i in `seq 7`
+#do
+#sleep 30
+#echo "adb shell input keyevent 27"
+#adb shell input keyevent 27
+#done
+#

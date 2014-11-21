@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="dpst_lvl">5</string>
+    <string name="dpst_alg">DPST4_5_SW_ALG</string>
+    <boolean name="dpst_start" value="false" />
+</map>

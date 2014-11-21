@@ -1,0 +1,128 @@
+##########################################################################
+# SEP Uncore Event File: UNC_VISA_Module0_1_Snoops.txt
+# File: PRIVATE - INTEL CONFIDENTIAL - FOR INTEL INTERNAL USE ONLY
+# Events: PUBLIC
+# Created: Tue Mar  4 10:51:51 2014
+# Target: VLV-B0
+# Revision: 1.1-2.1.19.0
+##########################################################################
+
+# EVENT INFORMATION
+
+# GROUP_ID         : 17806
+# GROUP_NAME       : UNC_VISA_Module0_1_Snoops
+# GROUP_PATH       : /SEP/PUBLIC/GROUPS/ - 1112
+# GROUP_DESC       : Counts the number of snoop requests and replies for Silvermont module 0 and 1.
+# GROUP_TAG        : 
+# EVENT_ID         : 17747
+# EVENT_NAME       : Mod1_Snoop_Reqs
+# EVENT_PATH       : /SEP/PUBLIC/EVENTS/TUNIT/ - 1113
+# EVENT_DESC       : Counts the number of snoop requests sent to module 1.
+# EVENT_EXPRESSION : /soc/ssa/ssa_core/tunit/i_tudfxvisa/t_emon_idi_s2c_reqs[1] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 3
+# EVENT_ID         : 17746
+# EVENT_NAME       : Mod1_Snoop_Replies
+# EVENT_PATH       : /SEP/PUBLIC/EVENTS/TUNIT/ - 1113
+# EVENT_DESC       : Counts the number of snoop replies received from module 1.
+# EVENT_EXPRESSION : /soc/ssa/ssa_core/tunit/i_tudfxvisa/t_emon_idi_c2s_rplys[1] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 2
+# EVENT_ID         : 17743
+# EVENT_NAME       : Mod0_Snoop_Reqs
+# EVENT_PATH       : /SEP/PUBLIC/EVENTS/TUNIT/ - 1113
+# EVENT_DESC       : Counts the number of snoop requests sent to module 0.
+# EVENT_EXPRESSION : /soc/ssa/ssa_core/tunit/i_tudfxvisa/t_emon_idi_s2c_reqs[0] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 1
+# EVENT_ID         : 17742
+# EVENT_NAME       : Mod0_Snoop_Replies
+# EVENT_PATH       : /SEP/PUBLIC/EVENTS/TUNIT/ - 1113
+# EVENT_DESC       : Counts the number of snoop replies received from module 0.
+# EVENT_EXPRESSION : /soc/ssa/ssa_core/tunit/i_tudfxvisa/t_emon_idi_c2s_rplys[0] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 0
+# CLOCK_COUNTER    : 4
+
+# All Visa Programing
+# HEADER	CFGTYPE	BUS_NUMBER	DEVICE_NUMBER	FUNC_NUMBER	REG_SIZE	OPERATION	BARNAME	OFFSET	VALUE	MASK	PORT_ID	OP_CODE
+#<CFGTYPE-MMIO/PCICFG>	<BUS_NUMBER>	<DEVICE_NUMBER>	<FUNC_NUMBER>	<REGISTER_SIZE>	<READ/WRITE/RMW operation>	<BARNAME>	<OFFSET>	<VALUE>	<MASK>	<PORT_ID>	<OP_CODE>
+
+# VISA CONFIGURATION
+
+# visactladdr
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000000	0x30000000	0xFFFFFFFF	24	1
+# visa_repeaters_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000C204	0x00000000	0xFFFFFFFF	24	1
+# visa_repeaters_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000C208	0x00000000	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000084	0x00000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000080	0x00000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000A8	0x00001003	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000AC	0x00000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000B0	0x00000000	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C04	0x00002728	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C00	0x00000001	0xFFFFFFFF	24	1
+# /soc/ssa/ssa_core/xunit/i_xudfxmisc/ssa_plm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009904	0x00000A0B	0xFFFFFFFF	24	1
+# /soc/ssa/ssa_core/xunit/i_xudfxmisc/ssa_plm_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009900	0x00000001	0xFFFFFFFF	24	1
+# /soc/ssa/ssa_core/tunit/i_tudfxvisa/tunit_ulm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009884	0x00000006	0xFFFFFFFF	24	1
+# /soc/ssa/ssa_core/tunit/i_tudfxvisa/tunit_ulm_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009880	0x00000001	0xFFFFFFFF	24	1
+
+# CHAP CONFIGURATION
+
+# ENABLE CHAP DEVICE
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000000	0x00008000	0xFFFFFFFF	23	1
+# Programming to write EV/STAT/DATA/CMD registers for all IsAllocated counters and CEC of all IsAllocated CECs
+# cec0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000008	0x00000003	0xFFFFFFFF	23	1
+# stat0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000030	0x10000000	0xFFFFFFFF	23	1
+# stat1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000040	0x10000000	0xFFFFFFFF	23	1
+# stat2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000050	0x10000000	0xFFFFFFFF	23	1
+# stat3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000060	0x10000000	0xFFFFFFFF	23	1
+# stat4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000070	0x00000000	0xFFFFFFFF	23	1
+# ev0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000002C	0x00000103	0xFFFFFFFF	23	1
+# ev1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000003C	0x00000102	0xFFFFFFFF	23	1
+# ev2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000004C	0x00000101	0xFFFFFFFF	23	1
+# ev3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000005C	0x00000100	0xFFFFFFFF	23	1
+# ev4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000006C	0x00002120	0xFFFFFFFF	23	1
+# data0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000034	0x00000000	0xFFFFFFFF	23	1
+# data1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000044	0x00000000	0xFFFFFFFF	23	1
+# data2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000054	0x00000000	0xFFFFFFFF	23	1
+# data3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000064	0x00000000	0xFFFFFFFF	23	1
+# data4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000074	0x00000000	0xFFFFFFFF	23	1
+# cmd0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000028	0x02010103	0xFFFFFFFF	23	1
+# cmd1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000038	0x02110102	0xFFFFFFFF	23	1
+# cmd2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000048	0x02110101	0xFFFFFFFF	23	1
+# cmd3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000058	0x02110100	0xFFFFFFFF	23	1
+# cmd4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000068	0x00110000	0xFFFFFFFF	23	1

@@ -1,0 +1,15 @@
+#! /bin/bash
+
+echo "[ VIDEO PLAYBACK 1080P SETUP 30 FPS STAGEFRIGHT]"
+echo "Need to sleep 120 seconds"
+sleep 120
+
+sleep 2
+adb root
+
+cd cases_scripts/
+#./video_playback_common_setup DPST
+./video_playback_common_setup
+./common_setup $1
+./stagefright_common_setup.sh
+cd -

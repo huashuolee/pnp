@@ -1,0 +1,50 @@
+#!/bin/bash
+
+echo ">>>> VIDEO PLAYBACK COMMON SETUP"
+
+function isValueInArr(){
+    params=(DPST dpst VPP vpp WIFI wifi)
+    value=$1
+    array=${params[@]}
+    for i in ${array[@]}
+    do
+#       echo "i = $i value = $value"
+        if [ $i == $value ]; then
+            echo $i
+            return
+        fi
+    done
+    echo "False"
+}
+
+
+for i in $*
+do
+    if [ $(isValueInArr $i) == 'False' ]; then
+        echo "NOT FOUND IN ARRAY"
+    else
+        if [ $i == 'DPST' ] || [ $i == 'dpst' ];
+        then
+            echo  "DPST ENABLE"
+            cd ../settings/
+            #./enable_dpst_saltbay_pr2
+            cd -
+        elif [ $i == 'VPP' ] || [ $i == 'vpp' ];
+        then
+            echo  "VPP ENABLE"
+            cd ../settings/
+            ./vpp_on
+            cd -
+        elif [ $i == 'WIFI' ] || [ $i == 'wifi' ];
+        then
+            echo "WIFI ENABLE"
+            cd ../settings/
+            ./wifi_on
+            cd -
+        fi
+    fi
+done
+
+
+
+

@@ -1,0 +1,33 @@
+#! /bin/bash
+
+log_name=$1
+echo "[ VIDEO PLAYBACK 1080P FPS STAGEFRIGHT ] keyevent 4"
+sleep 2
+adb shell input keyevent 4
+echo "[ VIDEO PLAYBACK 1080P FPS STAGEFRIGHT ] sleep 2"
+sleep 2
+echo "keyevent 3"
+adb shell input keyevent 3
+echo "[ VIDEO PLAYBACK 1080P FPS STAGEFRIGHT END ]"
+
+adb shell rm -r /data/data/com.android.gallery3d/cache
+echo "[ REMOVE THE GALLARY3D CACHE ]"
+
+echo "================ CASE STOP ==================="
+date
+echo "=========================================== EOF"
+
+#parsing fps
+#cd test_case
+#./parsingfps.sh fps.html fps.parsing.txt
+#cd ..
+#
+#adb logcat -v time > $log_name &
+#sleep 10
+
+cd cases_scripts
+echo "log_name = $log_name"
+./video_playback_common_stop $log_name
+sleep 2
+cat fps_video_playback_1080p_fps_stagefright | grep -nr "render_FPS"
+cd ..

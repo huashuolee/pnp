@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "[#### DISABLE INTEL SMART VIDEO ####]"
+adb push vpp/vpp_settings_off.xml /data/data/com.intel.vpp/shared_prefs/vpp_settings.xml
+echo "[#### DISABLE INTEL SMART VIDEO DONE ####]"
+

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "[#### USERMODE INIT ####]"
+
+echo "adb shell rm /data/data/com.android.camera2/shared_prefs/*"
+adb shell rm /data/data/com.android.camera2/shared_prefs/*
+adb wait-for-device
+echo "adb push usermode_android /data/data/com.android.camera2/shared_prefs/"
+adb shell mkdir /data/data/com.android.camera2/shared_prefs/
+adb wait-for-device
+adb push usermode_android /data/data/com.android.camera2/shared_prefs/
+echo "[#### USERMODE INIT DONE ####]"

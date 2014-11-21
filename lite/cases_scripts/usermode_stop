@@ -1,0 +1,23 @@
+#! /bin/bash
+
+log_name=$1
+#echo "[stop] adb wait for device"
+#adb wait-for-device
+#echo "adb device connected"
+#sleep 2
+echo "[ GET DUMPSYS SURFACEFLINGER RECORD USERMODE ]"
+adb shell "dumpsys SurfaceFlinger > /data/socwatch/results/dumpsys_camera_usermode.txt"
+sleep 3
+echo "[ RECORD SOCIAL 1080p ] keyevent 4"
+sleep 2
+adb shell input keyevent 4
+echo "[ RECORD SOCIAL 1080p] sleep 2"
+sleep 2
+echo "keyevent 3"
+adb shell input keyevent 3
+echo "[ RECORD SOCIAL 1080P END ]"
+
+#cd test_case
+#echo "log_name = $log_name"
+#./video_playback_common_stop $log_name
+#cd ..

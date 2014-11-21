@@ -1,0 +1,18 @@
+#! /bin/bash
+
+echo "[ CAMERA USERMODE CASE SETUP ]"
+adb root
+sleep 2
+
+#cd test_case/
+#./common_setup $1
+#cd -
+
+cd settings/
+./usermode_init
+cd -
+adb wait-for-device
+echo "COM.ANDROID.CAMERA2 START";
+adb shell am start -a android.intent.action.MAIN -n com.android.camera2/com.android.camera.CameraLauncher
+echo "COM.ANDROID.CAMERA2 START executed"
+

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+SERIAL=`adb get-serialno`
+
+echo "[#### WIFI OFF STARTING ####]"
+#echo "adb push wifi/$SERIAL/wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf "
+#adb push wifi/$SERIAL/wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf
+echo "adb push wifi/$SERIAL/disconnect /data/misc/wifi/"
+adb push wifi/$SERIAL/disconnect /data/misc/wifi/
+
+#echo "adb push wifi/$SERIAL/p2p_supplicant.conf /data/misc/wifi/p2p_supplicant.conf"
+#adb push wifi/$SERIAL/p2p_supplicant.conf /data/misc/wifi/p2p_supplicant.conf
+#sleep 2
+#adb shell chown wifi:wifi /data/misc/wifi/wpa_supplicant.conf
+#sleep 2
+#adb shell sqlite3 /data/data/com.android.providers.settings/databases/settings.db "update global set value='0' where name='wifi_on';"
+#sleep  2
+echo "adb shell svc wifi disable"
+adb wait-for-device
+adb shell svc wifi disable
+echo "[#### WIFI OFF DONE ####]"

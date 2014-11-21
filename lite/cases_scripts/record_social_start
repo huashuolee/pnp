@@ -1,0 +1,16 @@
+#! /bin/bash
+
+#echo "[start] adb wait for device"
+#adb wait-for-device
+#sleep 5
+echo "[ RECORD SOCIAL 1080P START ]"
+#echo "[ Need to sleep ]"
+#sleep 120
+
+echo "keyevent 23"
+sleep 3
+adb shell "input keyevent 23"
+sleep 3
+echo "keyevent 23 pressed"
+
+
