@@ -1,0 +1,187 @@
+##########################################################################
+# SEP Uncore Event File: UNC_VISA_New_Request_Hit_DDR.txt
+# File: PRIVATE - INTEL CONFIDENTIAL - FOR INTEL INTERNAL USE ONLY
+# Events: PRIVATE - INTEL CONFIDENTIAL - FOR INTEL INTERNAL USE ONLY
+# Created: Mon Feb 24 11:28:54 2014
+# Target: VLV-B0
+# Revision: 1.01-2.1.19.0
+##########################################################################
+
+# EVENT INFORMATION
+
+# GROUP_ID         : 17967
+# GROUP_NAME       : UNC_VISA_New_Request_Hit_DDR
+# GROUP_PATH       : /SEP/ - 1095
+# GROUP_DESC       : Counts DRAM channel 0 and 1 page hite events.
+# GROUP_TAG        : 
+# EVENT_ID         : 11074
+# EVENT_NAME       : New Request Hit - Wr64
+# EVENT_PATH       : /NC/Dunit1/Performance/ - 735
+# EVENT_DESC       : Counts the number of new 64 byte Write requests that were taken by the Dunit when their bank was open (HIT).
+# EVENT_EXPRESSION : /soc/dunit1/dunit_wrp1/dperfmon/event_new_request_hit_ff[0] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 7
+# EVENT_ID         : 11073
+# EVENT_NAME       : New Request Hit - Wr32
+# EVENT_PATH       : /NC/Dunit1/Performance/ - 735
+# EVENT_DESC       : Counts the number of new 32 byte Write requests that were taken by the Dunit when their bank was open (HIT).
+# EVENT_EXPRESSION : /soc/dunit1/dunit_wrp1/dperfmon/event_new_request_hit_ff[1] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 6
+# EVENT_ID         : 11072
+# EVENT_NAME       : New Request Hit - Rd64
+# EVENT_PATH       : /NC/Dunit1/Performance/ - 735
+# EVENT_DESC       : Counts the number of new 64 byte Read requests that were taken by the Dunit when their bank was open (HIT).
+# EVENT_EXPRESSION : /soc/dunit1/dunit_wrp1/dperfmon/event_new_request_hit_ff[2] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 5
+# EVENT_ID         : 11071
+# EVENT_NAME       : New Request Hit - Rd32
+# EVENT_PATH       : /NC/Dunit1/Performance/ - 735
+# EVENT_DESC       : Counts the number of new 32 byte Read requests that were taken by the Dunit when their bank was open (HIT).
+# EVENT_EXPRESSION : /soc/dunit1/dunit_wrp1/dperfmon/event_new_request_hit_ff[3] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 4
+# EVENT_ID         : 15279
+# EVENT_NAME       : New Request Hit - Wr64
+# EVENT_PATH       : /NC/Dunit0/Performance/ - 1031
+# EVENT_DESC       : Counts the number of new 64 byte Write requests that were taken by the Dunit when their bank was open (HIT).
+# EVENT_EXPRESSION : /soc/dunit0/dunit_wrp0/dperfmon/event_new_request_hit_ff[0] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 3
+# EVENT_ID         : 15280
+# EVENT_NAME       : New Request Hit - Wr32
+# EVENT_PATH       : /NC/Dunit0/Performance/ - 1031
+# EVENT_DESC       : Counts the number of new 32 byte Write requests that were taken by the Dunit when their bank was open (HIT).
+# EVENT_EXPRESSION : /soc/dunit0/dunit_wrp0/dperfmon/event_new_request_hit_ff[1] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 2
+# EVENT_ID         : 15281
+# EVENT_NAME       : New Request Hit - Rd64
+# EVENT_PATH       : /NC/Dunit0/Performance/ - 1031
+# EVENT_DESC       : Counts the number of new 64 byte Read requests that were taken by the Dunit when their bank was open (HIT).
+# EVENT_EXPRESSION : /soc/dunit0/dunit_wrp0/dperfmon/event_new_request_hit_ff[2] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 1
+# EVENT_ID         : 15282
+# EVENT_NAME       : New Request Hit - Rd32
+# EVENT_PATH       : /NC/Dunit0/Performance/ - 1031
+# EVENT_DESC       : Counts the number of new 32 byte Read requests that were taken by the Dunit when their bank was open (HIT).
+# EVENT_EXPRESSION : /soc/dunit0/dunit_wrp0/dperfmon/event_new_request_hit_ff[3] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 0
+
+# All Visa Programing
+# HEADER	CFGTYPE	BUS_NUMBER	DEVICE_NUMBER	FUNC_NUMBER	REG_SIZE	OPERATION	BARNAME	OFFSET	VALUE	MASK	PORT_ID	OP_CODE
+#<CFGTYPE-MMIO/PCICFG>	<BUS_NUMBER>	<DEVICE_NUMBER>	<FUNC_NUMBER>	<REGISTER_SIZE>	<READ/WRITE/RMW operation>	<BARNAME>	<OFFSET>	<VALUE>	<MASK>	<PORT_ID>	<OP_CODE>
+
+# VISA CONFIGURATION
+
+# visactladdr
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000000	0x30000000	0xFFFFFFFF	24	1
+# visa_repeaters_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000C204	0x00000000	0xFFFFFFFF	24	1
+# visa_repeaters_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000C208	0x00000000	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000084	0x00000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000080	0x00000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000088	0x00000102	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000A8	0x00800400	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000AC	0x02402003	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000B0	0x00002C0A	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C04	0x00001F20	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C00	0x00000001	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C08	0x00002021	0xFFFFFFFF	24	1
+# /soc/ddr3iodfx/ddr3iodfx_plm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009D04	0x00000607	0xFFFFFFFF	24	1
+# /soc/ddr3iodfx/ddr3iodfx_plm_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009D00	0x00000001	0xFFFFFFFF	24	1
+# /soc/ddr3iodfx/ddr3iodfx_plm_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009D08	0x00000001	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A04	0x00000074	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A00	0x00000001	0xFFFFFFFF	24	1
+# /soc/dunit1/dunit_wrp1/dunit_ulm0_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A84	0x00000074	0xFFFFFFFF	24	1
+# /soc/dunit1/dunit_wrp1/dunit_ulm0_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A80	0x00000001	0xFFFFFFFF	24	1
+
+# CHAP CONFIGURATION
+
+# ENABLE CHAP DEVICE
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000000	0x00008000	0xFFFFFFFF	23	1
+# Programming to write EV/STAT/DATA/CMD registers for all IsAllocated counters and CEC of all IsAllocated CECs
+# stat0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000030	0x10000000	0xFFFFFFFF	23	1
+# stat1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000040	0x10000000	0xFFFFFFFF	23	1
+# stat2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000050	0x10000000	0xFFFFFFFF	23	1
+# stat3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000060	0x10000000	0xFFFFFFFF	23	1
+# stat4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000070	0x10000000	0xFFFFFFFF	23	1
+# stat5
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000080	0x10000000	0xFFFFFFFF	23	1
+# stat6
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000090	0x10000000	0xFFFFFFFF	23	1
+# stat7
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000A0	0x10000000	0xFFFFFFFF	23	1
+# ev0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000002C	0x00000107	0xFFFFFFFF	23	1
+# ev1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000003C	0x00000106	0xFFFFFFFF	23	1
+# ev2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000004C	0x00000105	0xFFFFFFFF	23	1
+# ev3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000005C	0x00000104	0xFFFFFFFF	23	1
+# ev4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000006C	0x00000103	0xFFFFFFFF	23	1
+# ev5
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000007C	0x00000102	0xFFFFFFFF	23	1
+# ev6
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000008C	0x00000101	0xFFFFFFFF	23	1
+# ev7
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000009C	0x00000100	0xFFFFFFFF	23	1
+# data0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000034	0x00000000	0xFFFFFFFF	23	1
+# data1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000044	0x00000000	0xFFFFFFFF	23	1
+# data2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000054	0x00000000	0xFFFFFFFF	23	1
+# data3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000064	0x00000000	0xFFFFFFFF	23	1
+# data4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000074	0x00000000	0xFFFFFFFF	23	1
+# data5
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000084	0x00000000	0xFFFFFFFF	23	1
+# data6
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000094	0x00000000	0xFFFFFFFF	23	1
+# data7
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000A4	0x00000000	0xFFFFFFFF	23	1
+# cmd0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000028	0x02010107	0xFFFFFFFF	23	1
+# cmd1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000038	0x02110106	0xFFFFFFFF	23	1
+# cmd2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000048	0x02110105	0xFFFFFFFF	23	1
+# cmd3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000058	0x02110104	0xFFFFFFFF	23	1
+# cmd4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000068	0x02110103	0xFFFFFFFF	23	1
+# cmd5
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000078	0x02110102	0xFFFFFFFF	23	1
+# cmd6
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000088	0x02110101	0xFFFFFFFF	23	1
+# cmd7
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000098	0x02110100	0xFFFFFFFF	23	1

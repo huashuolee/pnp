@@ -1,0 +1,200 @@
+##########################################################################
+# SEP Uncore Event File: UNC_VISA_Memory_DDR0_BW.txt
+# File: PRIVATE - INTEL CONFIDENTIAL - FOR INTEL INTERNAL USE ONLY
+# Events: PUBLIC
+# Created: Tue Mar  4 10:51:51 2014
+# Target: VLV-B0
+# Revision: 1.1-2.1.19.0
+##########################################################################
+
+# EVENT INFORMATION
+
+# GROUP_ID         : 17799
+# GROUP_NAME       : UNC_VISA_Memory_DDR0_BW
+# GROUP_PATH       : /SEP/PUBLIC/GROUPS/ - 1112
+# GROUP_DESC       : Counts memory read and write requests to memory channel 0, rank 0 and 1. Determine memory channel 0 bandwidth by multiplying event count by 64 bytes.
+# GROUP_TAG        : 
+# EVENT_ID         : 17790
+# EVENT_NAME       : DDR_Chan0_Rank0_Read64B
+# EVENT_PATH       : /SEP/PUBLIC/EVENTS/DUNIT/ - 1115
+# EVENT_DESC       : Counts memory read requests to memory channel 0, rank 0.
+# EVENT_EXPRESSION : /soc/dunit0/dunit_wrp0/dperfmon/event_read_cmd[7] == 1'b1 || /soc/dunit0/dunit_wrp0/dperfmon/event_read_cmd[3] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 0
+# EVENT_ID         : 17791
+# EVENT_NAME       : DDR_Chan0_Rank1_Read64B
+# EVENT_PATH       : /SEP/PUBLIC/EVENTS/DUNIT/ - 1115
+# EVENT_DESC       : Counts memory read requests to memory channel 0, rank 1.
+# EVENT_EXPRESSION : /soc/dunit0/dunit_wrp0/dperfmon/event_read_cmd[6] == 1'b1 || /soc/dunit0/dunit_wrp0/dperfmon/event_read_cmd[2] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 1
+# EVENT_ID         : 17788
+# EVENT_NAME       : DDR_Chan0_Rank0_Write64B
+# EVENT_PATH       : /SEP/PUBLIC/EVENTS/DUNIT/ - 1115
+# EVENT_DESC       : Counts memory write requests to memory channel 0, rank 0.
+# EVENT_EXPRESSION : /soc/dunit0/dunit_wrp0/dperfmon/event_write_cmd[7] == 1'b1 || /soc/dunit0/dunit_wrp0/dperfmon/event_write_cmd[3] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 2
+# EVENT_ID         : 17789
+# EVENT_NAME       : DDR_Chan0_Rank1_Write64B
+# EVENT_PATH       : /SEP/PUBLIC/EVENTS/DUNIT/ - 1115
+# EVENT_DESC       : Counts memory write requests to memory channel 0, rank 1.
+# EVENT_EXPRESSION : /soc/dunit0/dunit_wrp0/dperfmon/event_write_cmd[6] == 1'b1 || /soc/dunit0/dunit_wrp0/dperfmon/event_write_cmd[2] == 1'b1
+# EVENT_TAG        : 
+# EVENT_COUNTER    : 3
+# CLOCK_COUNTER    : 4
+
+# All Visa Programing
+# HEADER	CFGTYPE	BUS_NUMBER	DEVICE_NUMBER	FUNC_NUMBER	REG_SIZE	OPERATION	BARNAME	OFFSET	VALUE	MASK	PORT_ID	OP_CODE
+#<CFGTYPE-MMIO/PCICFG>	<BUS_NUMBER>	<DEVICE_NUMBER>	<FUNC_NUMBER>	<REGISTER_SIZE>	<READ/WRITE/RMW operation>	<BARNAME>	<OFFSET>	<VALUE>	<MASK>	<PORT_ID>	<OP_CODE>
+
+# VISA CONFIGURATION
+
+# visactladdr
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000000	0x30000000	0xFFFFFFFF	24	1
+# visa_repeaters_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000C204	0x00000000	0xFFFFFFFF	24	1
+# visa_repeaters_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000C208	0x00000000	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000084	0x00000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000080	0x00000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000088	0x00000102	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000A8	0x01800C07	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000AC	0x02C03C02	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000B0	0x0000280E	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C04	0x00001F20	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C00	0x00000001	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C08	0x00002021	0xFFFFFFFF	24	1
+# /soc/ddr3iodfx/ddr3iodfx_plm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009D04	0x00000001	0xFFFFFFFF	24	1
+# /soc/ddr3iodfx/ddr3iodfx_plm_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009D00	0x00000001	0xFFFFFFFF	24	1
+# /soc/ddr3iodfx/ddr3iodfx_plm_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009D08	0x00000102	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A04	0x00000090	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A00	0x00000001	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A08	0x00000091	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A00	0x00000061	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A04	0x00000000	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A08	0x00000000	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000084	0x20000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000084	0x20000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000088	0x20000102	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000088	0x20000102	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000084	0x60000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000084	0x20000001	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A00	0x00000001	0xFFFFFFFF	24	1
+# visactladdr
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000000	0x30000000	0xFFFFFFFF	24	1
+# visa_repeaters_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000C204	0x00000000	0xFFFFFFFF	24	1
+# visa_repeaters_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000C208	0x00000000	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000084	0x20000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000080	0x00000001	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000088	0x20000102	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000A8	0x01800C07	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000AC	0x02C03C02	0xFFFFFFFF	24	1
+# /soc/socdfx/soc_dfxfab/i_dfxfab_dfd_top/dfxfab_clm_xbar2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x000000B0	0x0000280E	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C04	0x00001F20	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C00	0x00000001	0xFFFFFFFF	24	1
+# /soc/dfxnc/nc_dfxfab/i_dfxfab_dfd_top/generate_visa_plm/dfxfab_visa_partition_mux_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009C08	0x00002021	0xFFFFFFFF	24	1
+# /soc/ddr3iodfx/ddr3iodfx_plm_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009D04	0x00000001	0xFFFFFFFF	24	1
+# /soc/ddr3iodfx/ddr3iodfx_plm_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009D00	0x00000001	0xFFFFFFFF	24	1
+# /soc/ddr3iodfx/ddr3iodfx_plm_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00009D08	0x00000102	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_lane0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A04	0x00000090	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_ctrl
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A00	0x00000001	0xFFFFFFFF	24	1
+# /soc/dunit0/dunit_wrp0/dunit_ulm0_lane1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00008A08	0x00000091	0xFFFFFFFF	24	1
+
+# CHAP CONFIGURATION
+
+# ENABLE CHAP DEVICE
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000000	0x00008000	0xFFFFFFFF	23	1
+# Programming to write EV/STAT/DATA/CMD registers for all IsAllocated counters and CEC of all IsAllocated CECs
+# cec0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000008	0x00FCFF00	0xFFFFFFFF	23	1
+# cec1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000000C	0x00F3FF00	0xFFFFFFFF	23	1
+# cec2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000010	0x00CFFF00	0xFFFFFFFF	23	1
+# cec3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000014	0x003FFF00	0xFFFFFFFF	23	1
+# cec4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000018	0x00000003	0xFFFFFFFF	23	1
+# stat0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000030	0x10000000	0xFFFFFFFF	23	1
+# stat1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000040	0x10000000	0xFFFFFFFF	23	1
+# stat2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000050	0x10000000	0xFFFFFFFF	23	1
+# stat3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000060	0x10000000	0xFFFFFFFF	23	1
+# stat4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000070	0x00000000	0xFFFFFFFF	23	1
+# ev0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000002C	0x00000120	0xFFFFFFFF	23	1
+# ev1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000003C	0x00000121	0xFFFFFFFF	23	1
+# ev2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000004C	0x00000122	0xFFFFFFFF	23	1
+# ev3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000005C	0x00000123	0xFFFFFFFF	23	1
+# ev4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x0000006C	0x00002124	0xFFFFFFFF	23	1
+# data0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000034	0x00000000	0xFFFFFFFF	23	1
+# data1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000044	0x00000000	0xFFFFFFFF	23	1
+# data2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000054	0x00000000	0xFFFFFFFF	23	1
+# data3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000064	0x00000000	0xFFFFFFFF	23	1
+# data4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000074	0x00000000	0xFFFFFFFF	23	1
+# cmd0
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000028	0x02010120	0xFFFFFFFF	23	1
+# cmd1
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000038	0x02110121	0xFFFFFFFF	23	1
+# cmd2
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000048	0x02110122	0xFFFFFFFF	23	1
+# cmd3
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000058	0x02110123	0xFFFFFFFF	23	1
+# cmd4
+CFG	0	0	0	32	WRITE	SIDEBAND	0x00000068	0x00110000	0xFFFFFFFF	23	1
