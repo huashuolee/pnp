@@ -65,6 +65,7 @@ function push_media_file()
     do 
        echo "Push $item"
        adb push $item /sdcard/
+       adb shell "mkdir /data/socwatch/ptop_results"
     done
 function dev_push_media_file_via_cases()
 {
@@ -136,6 +137,11 @@ function rm_setup()
     adb shell rm /system/priv-app/SetupW*
 }
 
+function mkptop()
+{
+    adb shell mkdir /data/socwatch/ptop_results
+}
+
 function dev_init()
 {
     #SERIAL=`adb get-serialno`
@@ -177,7 +183,8 @@ dev_install_powertop
 
 #dev_push_media_files
 #dev_push_media_file_via_cases
-push_media_file
+#push_media_file
+mkptop
 dev_reboot
 
 echo "All done."
