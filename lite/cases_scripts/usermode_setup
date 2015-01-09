@@ -13,6 +13,11 @@ cd settings/
 cd -
 adb wait-for-device
 echo "COM.ANDROID.CAMERA2 START";
-adb shell am start -a android.intent.action.MAIN -n com.android.camera2/com.android.camera.CameraLauncher
+echo "PRESS ANY KEY TO CONTINUE"
+read tttime
+#For KK
+#adb shell am start -a android.intent.action.MAIN -n com.android.camera2/com.android.camera.CameraLauncher
+# for Android L
+adb shell am start -a android.intent.action.MAIN -n com.google.android.GoogleCamera/com.android.camera.CameraLauncher 
 echo "COM.ANDROID.CAMERA2 START executed"
 

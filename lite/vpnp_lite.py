@@ -251,7 +251,7 @@ def run_single_case(cases_id, single_case_id, case_detail) :
     # heartbeat check ignored in lite version
     print_msg('A', 'usb_toggle() called')
     usb_toggle(True, 5)
-
+    raw_input("PRESS ANY KEY TO CONTINUE:")
     single_case_setup(case_detail)
     print_msg('D','case setup done')
 

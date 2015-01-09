@@ -136,8 +136,15 @@ function rm_setup()
     adb shell rm /system/priv-app/SetupW*
 }
 
+function mkptop()
+{
+    adb shell mkdir /data/socwatch/ptop_results
+    adb shell mkdir /data/socwatch/results
+}
+
 function dev_init()
 {
+    
     #SERIAL=`adb get-serialno`
     echo "initialize the device"
     #adb shell "input keyevent 26"
@@ -177,7 +184,8 @@ dev_install_powertop
 
 #dev_push_media_files
 #dev_push_media_file_via_cases
-push_media_file
+#push_media_file
+mkptop
 dev_reboot
 
 echo "All done."
