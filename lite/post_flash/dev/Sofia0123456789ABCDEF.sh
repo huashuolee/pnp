@@ -14,14 +14,14 @@ echo "Initialize the Sofia0123456789ABCDEF device"
 #MRD5S
 #VALUE= 40 
 #sevenP1
-VALUE=40
+VALUE=44
 
 adb shell sqlite3 /data/data/com.android.providers.settings/databases/settings.db "update system set value='$VALUE' where name='screen_brightness';"
 sleep 2
 echo "DISABLE AUTOROTATION"
-adb shell sqlite3 /data/data/com.android.providers.settings/databases/settings.db "update system set value='0' where name='accelerometer_rotation'";
+#adb shell sqlite3 /data/data/com.android.providers.settings/databases/settings.db "update system set value='0' where name='accelerometer_rotation'";
 sleep 2
-adb shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:1
+#adb shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:1
 sleep 3
 echo "Execution result:"$?
 #adb reboot

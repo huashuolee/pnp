@@ -16,8 +16,11 @@ cd -
 
 if [ "$sd1" == "CHROME" ];then
 echo "START CHROME BROWSER"
+# KK
 adb shell am start -a android.intent.action.VIEW -n com.android.chrome/.Main -d http://10.0.0.2/http/h264-720p.html
 
+# For L
+#adb shell am start -a android.intent.action.VIEW -n com.android.chrome/com.google.android.apps.chrome.Main -d http://10.0.0.2/http/h264-720p.html
 #adb shell am start -a android.intent.action.VIEW -n com.example.chromium/com.google.android.apps.chrome.Main -d http://10.0.0.2/http/h264-720p.html
 elif [ "$sd1" == "STOCK" ];then
 echo "START STOCK BROWSER"
@@ -26,20 +29,23 @@ fi
 
 
 #Playing by enter the url
-adb shell input tap 60 90
-adb wait-for-device
-adb shell input tap 60 90
-adb wait-for-device
-adb shell input tap 60 90
-adb wait-for-device
+#adb shell input tap 60 90
+#adb wait-for-device
+#adb shell input tap 60 90
+#adb wait-for-device
+#adb shell input tap 60 90
+#adb wait-for-device
 
 #tap to play
-adb shell input tap 500 300
-adb wait-for-device
-adb shell input tap 500 300
-adb wait-for-device
-adb shell input tap 500 300
+#adb shell input tap 500 300
+#adb wait-for-device
+#adb shell input tap 500 300
+#adb wait-for-device
+#adb shell input tap 500 300
 echo "[ INPUT TAP 500 300 ]"
 
 echo "Wait 5 seconds to play stream video"
+echo "tap to play "
 sleep 5
+read ssss
+echo 'press any key to continue'

@@ -9,11 +9,11 @@ date=`date "+%Y%m%d"`
 adb shell date -s $date
 
 echo "DISABLE AUTOROTATION"
-adb shell sqlite3 /data/data/com.android.providers.settings/databases/settings.db "update system set value='0' where name='accelerometer_rotation'";
+#adb shell sqlite3 /data/data/com.android.providers.settings/databases/settings.db "update system set value='0' where name='accelerometer_rotation'";
 sleep 2
 
 adb shell echo "."
-adb shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:1
+#adb shell content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:1
 sleep 3
 
 echo "media_file = [$media_file] case = [$case_name]"

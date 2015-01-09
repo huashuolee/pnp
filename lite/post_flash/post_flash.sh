@@ -65,7 +65,6 @@ function push_media_file()
     do 
        echo "Push $item"
        adb push $item /sdcard/
-       adb shell "mkdir /data/socwatch/ptop_results"
     done
 function dev_push_media_file_via_cases()
 {
@@ -140,10 +139,12 @@ function rm_setup()
 function mkptop()
 {
     adb shell mkdir /data/socwatch/ptop_results
+    adb shell mkdir /data/socwatch/results
 }
 
 function dev_init()
 {
+    
     #SERIAL=`adb get-serialno`
     echo "initialize the device"
     #adb shell "input keyevent 26"

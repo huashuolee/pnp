@@ -19,8 +19,13 @@ adb push com.android.camera2_preferences.xml /data/data/com.android.camera2/shar
 sleep 2
 adb push com.android.camera2_preferences_0.xml /data/data/com.android.camera2/shared_prefs/
 sleep 2
-
+#For KK
 adb shell am start -a android.intent.action.MAIN -n com.android.camera2/com.android.camera.CameraLauncher
+
+#for L 
+#adb shell am start -a android.intent.action.MAIN -n com.google.android.GoogleCamera/com.android.camera.CameraLauncher 
+echo 'PRESS ANY KEY TO CONTINUE^^^^^'
+read n 
 sleep 5
 ./cases_scripts/record_social_start
 
